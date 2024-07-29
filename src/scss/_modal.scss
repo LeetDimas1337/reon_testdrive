@@ -1,0 +1,249 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+
+    width: 792px;
+    left: calc(50% - 792px/2);
+    top: calc(50% - 343px/2 - 0.5px);
+
+    background: var(--backWhite);
+    border-radius: 15px;
+    
+    &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        
+        height: 52px;
+        gap: 10px;
+        opacity: 0px;
+
+        h2 {
+            text-transform: uppercase;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 24px;
+
+            color: var(--black);
+        }
+        p {
+            color: var(--green);
+
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 30px;
+
+            color: var(--green);
+        }
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 30px;
+
+            color: var(--black);
+        }
+
+        .form-range {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            label {
+                
+                position: relative;
+                width: 100%;
+
+                .input-range {
+                    --c: var(--green); /* active color */
+                    --g: 5px; /* the gap */
+                    --l: 15px; /* line thickness*/
+                    --s: 30px; /* thumb size*/
+                    
+                    width: 100%;
+                    border-radius: 5px;
+                    -webkit-appearance :none;
+                    -moz-appearance :none;
+                    appearance :none;
+                    background: none;
+                    cursor: pointer;
+                    overflow: hidden;
+                }
+                    
+                    /* chromium */
+                .input-range[type="range" i]::-webkit-slider-thumb {
+                    height: var(--s);
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    
+                    top: 50px;
+                    background: var(--white);
+                    box-shadow: 0px 2px 5.8px rgba(0, 0, 0, 0.15);
+                    border-image: linear-gradient(90deg,var(--c) 50%,var(--inputGray) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+                                      
+                
+                .range-label {
+                    position: absolute;
+                    top: 34px; /* Расстояние между ползунком и меткой */
+                    transform: translateX(-50%);
+                    font-size: 16px;
+                    
+                    color: var(--black);
+
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+
+            .range-min-max {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                font-size: 16px;
+                color: var(--black);
+
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+
+
+        .form-list {
+            input {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 5px;
+
+                width: 692px;
+                height: 28px;
+
+                background: var(--backWhite);
+                border: 0;
+                border-bottom: 3px solid var(--gray);
+
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+
+                color: var(--black);
+            }
+
+            input::-webkit-calendar-picker-indicator {
+                color: var(--green);
+            }
+        }
+
+        .form-check {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            label {
+                display: flex;
+                gap: 10px;
+
+                p {
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+
+                    color: var(--black);
+                }
+            }
+
+            .input-check {
+                vertical-align: middle;
+                -webkit-appearance: none;
+                background: none;
+                border: 0;
+                outline: 0;
+                flex-grow: 0;
+                background-color: #FFFFFF;
+                transition: background 300ms;
+                cursor: pointer;
+
+                width: 20px;
+                height: 20px;
+
+                background: #FFFFFF;
+                border-radius: 3px;
+
+            }
+
+            .input-check::before {
+                content: "";
+                color: transparent;
+                display: block;
+                width: inherit;
+                height: inherit;
+                border-radius: inherit;
+                border: 0;
+                background-color: transparent;
+                background-size: contain;
+                box-shadow: inset 0 0 0 1px #CCD3D8;
+            }
+            
+            .input-check:checked {
+                background-color: currentcolor;
+                background: #FFFFFF;
+                border: 1px solid #C2C2C2;
+                border-radius: 3px;
+            }
+            
+            .input-check:checked::before {
+                box-shadow: none;
+                background-image: url("../assets/done.svg");
+                width: 12px;
+                height: 12px;
+                position: relative;
+                top: 3px;
+                left: 3px;
+            }
+            
+            
+            
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        width: 692px;
+    }
+}

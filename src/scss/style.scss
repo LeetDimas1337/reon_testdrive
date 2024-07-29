@@ -1,0 +1,25 @@
+@import 'nextButton';
+@import 'backButton';
+@import 'modal';
+
+:root {
+    --white: #FFFFFF;
+    --backWhite: #F9F9F9;
+    --black: #3E3E3E;
+    --gray: #858585;
+    --inputGray: #D9D9D9;
+    --green:#9FC136;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
