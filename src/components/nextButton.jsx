@@ -1,13 +1,19 @@
-
 import React from 'react';
+// Вместо создания нескольких кнопок, можно было создать одну с различными вариантами. Вариант передавать через пропы
 
-function NextButton({ onClick }) {
+// Если ты делаешь компонент только со стилизацией, то желательно давать возможность передавать пропы нативного компонента
+
+// function NextButton({ children, ...props })
+// <button className="next-button" {...props}>{children}</button>
+
+function NextButton({onClick}) {
 
     return (
-      <>
-        <button onClick={ onClick } className="next-button">ДАЛЕЕ</button>
-      </>
+        // <> Лишние здесь
+        <>
+            <button onClick={onClick} className="next-button">ДАЛЕЕ</button>
+        </>
     )
-  }
-  
-  export default NextButton
+}
+
+export default NextButton

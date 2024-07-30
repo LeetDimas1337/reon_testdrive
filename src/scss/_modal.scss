@@ -1,3 +1,5 @@
+// Не злоупотребляй вложенностью в scss
+
 .modal {
     display: flex;
     flex-direction: column;
@@ -35,14 +37,13 @@
             color: var(--black);
         }
         p {
+          // Дублирующий код лучше выносить в миксины
             color: var(--green);
-
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 500;
             font-size: 25px;
             line-height: 30px;
-
             color: var(--green);
         }
     }
@@ -184,7 +185,6 @@
                     color: var(--black);
                 }
             }
-
             .input-check {
                 vertical-align: middle;
                 -webkit-appearance: none;
@@ -203,7 +203,7 @@
                 border-radius: 3px;
 
             }
-
+          // Можно использовать конкатенацию с &::before
             .input-check::before {
                 content: "";
                 color: transparent;
@@ -243,7 +243,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        
+        // В крайнем случае стоит задавать ширину в пикселях. Лучше в процентах, а здесь вообще можно убрать
         width: 692px;
     }
 }
